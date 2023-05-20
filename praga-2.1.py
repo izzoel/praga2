@@ -127,13 +127,13 @@ def pulang(nameDetect, check):
             if (check >= '21:00:00') & (check <= '22:00:59'):
                 denda = 0;
             elif (check >= '22:01:00') & (check <= '22:30:59'):
-                denda = gaji*0.5/100;
+                denda = gaji*0.5/100
             elif (check >= '22:31:00') & (check <= '23:00:59'):
-                denda = gaji*1/100;
+                denda = gaji*1/100
             elif (check >= '23:01:00') & (check <= '23:30:59'):
-                denda = gaji*1.5/100;
+                denda = gaji*1.5/100
             elif (check >= '23:31:00') & (check <= absenPulangClosed):
-                denda = gaji*1.5/100;
+                denda = gaji*1.5/100
 
 
             file.loc[(file.Nama == nama.split('-')[0]) & (
@@ -175,18 +175,15 @@ def datang(nameDetect, check, frame):
                 gaji = 1100000
 
             if (check >= '21:00:00') & (check <= '22:00:59'):
-                denda = 0;
+                denda = 0
             elif (check >= '22:01:00') & (check <= '22:30:59'):
-                denda = gaji*0.5/100;
+                denda = gaji*0.5/100
             elif (check >= '22:31:00') & (check <= '23:00:59'):
-                denda = gaji*1/100;
+                denda = gaji*1/100
             elif (check >= '23:01:00') & (check <= '23:30:59'):
-                denda = gaji*1.5/100;
+                denda = gaji*1.5/100
             elif (check >= '23:31:00') & (check <= absenMasukClosed):
-                denda = gaji*1.5/100;
-
-            # print(absenMasukClosed)
-
+                denda = gaji*1.5/100
 
 
             df2 = pd.DataFrame([[nama.split('-')[0],jabatan, tanggal, datang, pulang, denda]],
